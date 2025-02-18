@@ -4,8 +4,8 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { 
   Scroll, 
   BookOpen, 
-  TestTube, // Changé de Flask à TestTube
-  Routes, 
+  TestTube,
+  Route,  // Changé de Routes à Route
   Clock, 
   Map,
   BookMarked,
@@ -43,7 +43,7 @@ const HistoireSanda = () => {
     { id: 'golden-age', label: 'Âge d\'Or', icon: <BookOpen className="h-4 w-4" /> },
     { id: 'preparation', label: 'Préparation', icon: <TestTube className="h-4 w-4" /> },
     { id: 'medical-texts', label: 'Textes Médicaux', icon: <Archive className="h-4 w-4" /> },
-    { id: 'trade', label: 'Commerce', icon: <Routes className="h-4 w-4" /> },
+    { id: 'trade', label: 'Commerce', icon: <Route className="h-4 w-4" /> },
     { id: 'modern', label: 'Ère Moderne', icon: <Clock className="h-4 w-4" /> }
   ];
 
