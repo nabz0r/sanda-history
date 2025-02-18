@@ -43,6 +43,34 @@ module.exports = {
 };
 ```
 
+## Déploiement sur Render
+
+Pour déployer l'application sur Render, suivez ces étapes :
+
+1. Créez un nouveau service "Static Site" sur Render
+2. Connectez votre repository GitHub
+3. Configurez les paramètres de build :
+   ```
+   Build Command: npm install && npm run build
+   Publish Directory: build
+   ```
+
+Le fichier render.yaml est déjà configuré avec les paramètres optimaux :
+```yaml
+services:
+  - type: web
+    name: sanda-history
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./build
+    pullRequestPreviewsEnabled: true
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+      - key: CI
+        value: false
+```
+
 ## Fonctionnalités
 
 - Navigation interactive avec défilement fluide
@@ -70,6 +98,8 @@ src/
   │   └── globals.css         # Styles globaux et variables Tailwind
   ├── lib/
   │   └── utils.js            # Utilitaires pour les styles
+  ├── data/
+  │   └── extraction.js        # Données historiques
   ├── App.jsx                 # Point d'entrée de l'application
   ├── index.js                # Configuration React
   └── index.css              # Imports Tailwind
@@ -78,7 +108,8 @@ Configuration/
   ├── jsconfig.json          # Configuration des chemins absolus
   ├── postcss.config.js      # Configuration PostCSS
   ├── tailwind.config.js     # Configuration Tailwind
-  └── craco.config.js        # Configuration Craco
+  ├── craco.config.js        # Configuration Craco
+  └── render.yaml            # Configuration Render
 ```
 
 ## Résolution des problèmes courants
@@ -92,3 +123,14 @@ Pour les problèmes de styles, assurez-vous que :
 1. globals.css est bien importé dans App.jsx
 2. postcss.config.js est présent à la racine
 3. tailwind.config.js contient toutes les configurations nécessaires
+
+Pour les problèmes avec les icônes Lucide :
+1. Vérifiez que vous utilisez les bons noms d'icônes (par exemple, TestTube au lieu de Flask)
+2. Consultez la documentation de lucide-react pour les noms exacts des icônes
+3. Utilisez la version spécifiée dans package.json (0.263.1)
+
+## Notes de version
+
+- Mise à jour des icônes Lucide (Flask -> TestTube)
+- Ajout de la configuration Render pour le déploiement
+- Intégration des données historiques dans un fichier séparé
