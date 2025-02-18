@@ -4,12 +4,12 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { 
   Scroll, 
   BookOpen, 
-  Flask, 
+  TestTube, // Changé de Flask à TestTube
   Routes, 
   Clock, 
   Map,
   BookMarked,
-  BeakerIcon,
+  Beaker,
   Archive
 } from 'lucide-react';
 
@@ -41,7 +41,7 @@ const HistoireSanda = () => {
     { id: 'intro', label: 'Introduction', icon: <BookMarked className="h-4 w-4" /> },
     { id: 'origins', label: 'Origines', icon: <Scroll className="h-4 w-4" /> },
     { id: 'golden-age', label: 'Âge d\'Or', icon: <BookOpen className="h-4 w-4" /> },
-    { id: 'preparation', label: 'Préparation', icon: <Flask className="h-4 w-4" /> },
+    { id: 'preparation', label: 'Préparation', icon: <TestTube className="h-4 w-4" /> },
     { id: 'medical-texts', label: 'Textes Médicaux', icon: <Archive className="h-4 w-4" /> },
     { id: 'trade', label: 'Commerce', icon: <Routes className="h-4 w-4" /> },
     { id: 'modern', label: 'Ère Moderne', icon: <Clock className="h-4 w-4" /> }
