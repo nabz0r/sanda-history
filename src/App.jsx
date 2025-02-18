@@ -1,5 +1,6 @@
 import React from 'react';
 import HistoireSanda from './components/HistoireSanda';
+import './styles/globals.css';
 
 function App() {
   return (
