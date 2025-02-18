@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: sanda-history
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./build
+    pullRequestPreviewsEnabled: true
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+      - key: CI
+        value: false
