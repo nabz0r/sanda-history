@@ -24,10 +24,13 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "CI=false craco build",
+    "build": "CI=false && craco build",
+    "serve": "serve -s build",
     "test": "craco test",
-    "eject": "craco eject",
-    "dev": "craco start"
+    "eject": "craco eject"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   },
   "eslintConfig": {
     "extends": [
